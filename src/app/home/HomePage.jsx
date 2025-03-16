@@ -8,10 +8,10 @@ import { Card, Paper, CircularProgress } from '@mui/material';
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import CardActionArea from '@mui/material/CardActionArea';
 
-import NavBar from '../components/NavBar';
-import Button from '../components/Button';
-import Footer from '../components/Footer';
-import CountryDialog from '../components/CountryDialog';
+import NavBar from '../../components/NavBar';
+import Button from '../../components/Button';
+import Footer from '../../components/Footer';
+import CountryDialog from '../../components/CountryDialog';
 
 export default function HomePage() {
 
