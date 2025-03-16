@@ -11,10 +11,10 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+// import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Home', 'Buscar', 'Acerca de'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['Inicio', 'Buscar por nombre', 'Buscar por region', 'Buscar por idioma'];
+const settings = ['Sobre mi', 'Apoya al autor',];
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -36,16 +36,14 @@ function NavBar() {
   };
 
   return (
-    <AppBar position="static" sx={{backgroundColor: 'ActiveBorder'}}>
+    <AppBar position="sticky" sx={{backgroundColor: 'rgba(2,0,36,1)'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
+
+          {/* /* 
+            ! TITULO DE LA PAGINA PARA DISPOSITIVOS GRANDES
+          */}
+          <Typography variant="h6" noWrap component="a" href="#app-bar-with-responsive-menu" sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
               fontWeight: 500,
@@ -59,29 +57,19 @@ function NavBar() {
             </a>
           </Typography>
 
+          {/* /* 
+            ! Renderizado de la secciones del navbar
+          */}
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
+            <IconButton size="large" aria-label="account of current user" aria-controls="menu-appbar" 
+              aria-haspopup="true" onClick={handleOpenNavMenu} color="inherit" >
+
               <MenuIcon />
+
             </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
+
+            <Menu id="menu-appbar" anchorEl={anchorElNav} anchorOrigin={{ vertical: 'bottom', horizontal: 'left', }}
+              keepMounted transformOrigin={{ vertical: 'top', horizontal: 'left', }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{ display: { xs: 'block', md: 'none' } }}
@@ -92,15 +80,13 @@ function NavBar() {
                 </MenuItem>
               ))}
             </Menu>
+
           </Box>
           
-          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
+          {/* /* 
+            ! TITULO DE LA PAGINA PARA DISPOSITIVOS MEDIANOS Y PEQUEÑOS
+          */}
+          <Typography variant="h5" noWrap component="a" href="#app-bar-with-responsive-menu" sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
@@ -113,36 +99,34 @@ function NavBar() {
           >
             TuMundo.dev
           </Typography>
+
+          {/* /* 
+            ! Renderizado de la secciones del navbar en dispostivos pequeños y medianos
+          */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
+              <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }} >
                 {page}
               </Button>
             ))}
+
           </Box>
+
+          {/* /* 
+            ! Renderizado de la secciones para acerca del autor
+          */}
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            <Tooltip title="Acerca del autor">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="N" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
+            <Menu sx={{ mt: '45px' }} id="menu-appbar" anchorEl={anchorElUser} anchorOrigin={{
                 vertical: 'top',
                 horizontal: 'right',
               }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
+              keepMounted transformOrigin={{ vertical: 'top', horizontal: 'right', }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
@@ -153,6 +137,10 @@ function NavBar() {
               ))}
             </Menu>
           </Box>
+        
+          {/* /* 
+            ! FIN DEL CONTENIDO DEL NAVBAR 
+          */}
         </Toolbar>
       </Container>
     </AppBar>
