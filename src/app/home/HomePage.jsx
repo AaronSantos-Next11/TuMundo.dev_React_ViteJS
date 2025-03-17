@@ -8,9 +8,9 @@ import { Card, Paper, CircularProgress } from '@mui/material';
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import CardActionArea from '@mui/material/CardActionArea';
 
-import NavBar from '../../components/NavBar';
+// import NavBar from '../../components/NavBar';
 import Button from '../../components/Button';
-import Footer from '../../components/Footer';
+// import Footer from '../../components/Footer';
 import CountryDialog from '../../components/CountryDialog';
 
 export default function HomePage() {
@@ -105,19 +105,16 @@ export default function HomePage() {
 
   //! Renderizado del cliente: 
   return (
-    <div style={{ background: 'linear-gradient(180deg, rgba(2,0,36,1) 14%, rgba(9,9,121,1) 50%, rgba(0,146,255,1) 100%)' }}>
-      
-      {/* Llamada del navbar */}
-      <NavBar />
+    <div style={{ background: 'linear-gradient(180deg, rgba(2,0,36,1) 14%, rgba(9,9,121,1) 50%, rgba(0,146,255,1) 100%)', }}>
 
       {/* ---------------------- HERO SECTION ---------------------- */}
 
-      <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', marginTop: '6em', marginBottom: '8em'}}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', marginBottom: '10em'}}>
 
           {/* Titulo de la pagina */}
           <Typography variant="h2" color="#e0e1e3" sx={{textShadow:'2px 1px 6px #e0e1e3'}}
           align="center" fontSize={fontsize_h1}
-          position="relative" margin={4} marginBottom={0}>
+          position="relative" padding={4} paddingTop={20} marginBottom={0}>
             Bienvenido a TuMundo.dev
           </Typography>
 
@@ -137,11 +134,6 @@ export default function HomePage() {
       </Box>
 
       {/* ---------------------- Sección de "Destacados" ---------------------- */}
-
-      {/* /* 
-        ! HACER UN MAP QUE RECORRA EL ARRAY DE LOS 3 PAISES DESTACADOS Y CREAR UNA CARD CON ALGO DE INFO DE CADA UNO 
-        ! (usando la API que puede recibir a cada uno de los paises)
-      */}
       
       <Typography variant="h4" fontSize={fontsize_h2} color="#e0e1e3" align="center" margin={3} >
         Países Destacados
@@ -151,7 +143,7 @@ export default function HomePage() {
       !  Ternaria que devuelve una carta vacia si no hay datos del pais, y sino la card con información
        */}
        
-      <Grid container spacing={4} sx={{ margin: 7, justifyContent: 'center' }}>
+      <Grid container spacing={4} sx={{ padding: 7, justifyContent: 'center' }}>
         { loading ? (
           <CircularProgress sx={{ color: 'white' }} />
         ) : (
@@ -235,9 +227,6 @@ export default function HomePage() {
       {/* /* 
       !  Sección que cambia en base al pais que seleccione el usuario y muestra mas información del mismo pais
        */}
-
-        {/*   Dialog que cambia de Detalles en base al País Seleccionado */}
-
         
       {!loading && selectedCard !== null && dialogOpen && (
         <CountryDialog 
@@ -246,16 +235,7 @@ export default function HomePage() {
           countryData={paisesData[paisesDestacados[selectedCard]]}
         />
       )}
-       
 
-        {/* /*
-        ? CORREGIR EL CODIGO DEL HOME Y DIALOG COB CLAUD
-        */}
-      
-      
-      {/* /* 
-        ! Footer de pagina */}
-      <Footer />
     </div>
   );
 }

@@ -11,12 +11,20 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-// import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['Inicio', 'Buscar por nombre', 'Buscar por region', 'Buscar por idioma'];
-const settings = ['Sobre mi', 'Apoya al autor',];
+import { Link, useNavigate } from 'react-router-dom';
+
+// Define las páginas con sus nombres y rutas correspondientes
+const pages = [
+  { name: 'Inicio', path: '/' },
+  { name: 'Buscar por nombre', path: '/buscar_por_nombre' },
+  { name: 'Buscar por region', path: '/buscar_por_region_subregion' },
+  { name: 'Buscar por idioma', path: '/buscar_por_lenguaje' }
+];
+const settings = ['Sobre mi', 'Apoya al autor'];
 
 function NavBar() {
+  const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -35,6 +43,11 @@ function NavBar() {
     setAnchorElUser(null);
   };
 
+  const handleNavigation = (path) => {
+    navigate(path);
+    handleCloseNavMenu();
+  };
+
   return (
     <AppBar position="sticky" sx={{backgroundColor: 'rgba(2,0,36,1)'}}>
       <Container maxWidth="xl">
@@ -43,7 +56,7 @@ function NavBar() {
           {/* /* 
             ! TITULO DE LA PAGINA PARA DISPOSITIVOS GRANDES
           */}
-          <Typography variant="h6" noWrap component="a" href="#app-bar-with-responsive-menu" sx={{
+          <Typography variant="h6" noWrap component="div" sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
               fontWeight: 500,
@@ -52,9 +65,9 @@ function NavBar() {
               textDecoration: 'none',
             }}
           >
-            <a href="./" style={{outline: 'none', textDecoration: 'none', color:'#e0e1e3'}}>
+            <Link to="/" style={{outline: 'none', textDecoration: 'none', color:'#e0e1e3'}}>
               TuMundo.dev
-            </a>
+            </Link>
           </Typography>
 
           {/* /* 
@@ -75,8 +88,8 @@ function NavBar() {
               sx={{ display: { xs: 'block', md: 'none' } }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                <MenuItem key={page.name} onClick={() => handleNavigation(page.path)}>
+                  <Typography sx={{ textAlign: 'center' }}>{page.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -86,18 +99,19 @@ function NavBar() {
           {/* /* 
             ! TITULO DE LA PAGINA PARA DISPOSITIVOS MEDIANOS Y PEQUEÑOS
           */}
-          <Typography variant="h5" noWrap component="a" href="#app-bar-with-responsive-menu" sx={{
+          <Typography variant="h5" noWrap component="div" sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              // fontFamily: 'monospace',
               fontWeight: 500,
               letterSpacing: '.1rem',
               color: 'AppWorkspace',
               textDecoration: 'none',
             }}
           >
-            TuMundo.dev
+            <Link to="/" style={{outline: 'none', textDecoration: 'none', color:'#e0e1e3'}}>
+              TuMundo.dev
+            </Link>
           </Typography>
 
           {/* /* 
@@ -106,8 +120,12 @@ function NavBar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 
             {pages.map((page) => (
-              <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }} >
-                {page}
+              <Button 
+                key={page.name} 
+                onClick={() => handleNavigation(page.path)} 
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                {page.name}
               </Button>
             ))}
 

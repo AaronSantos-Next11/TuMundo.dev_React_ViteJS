@@ -32,7 +32,7 @@ const Footer = () => {
             <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
               Sobre TuMundo.dev
             </Typography>
-            <Typography variant="body2" paragraph>
+            <Typography variant="body2" >
               La plataforma más completa de información sobre países del mundo. 
               Explore datos demográficos, banderas, capitales y mucho más.
             </Typography>
@@ -57,21 +57,24 @@ const Footer = () => {
             <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', fontFamily:'Railway' }}>
               Enlaces Útiles
             </Typography>
-            <Link href="#" color="inherit" sx={{ display: 'block', mb: 1 }}>
-              Buscar Países
-            </Link>
-            <Link href="#" color="inherit" sx={{ display: 'block', mb: 1 }}>
-              Continentes
-            </Link>
-            <Link href="#" color="inherit" sx={{ display: 'block', mb: 1 }}>
-              Estadísticas Globales
-            </Link>
-            <Link href="#" color="inherit" sx={{ display: 'block', mb: 1 }}>
-              API Documentación
-            </Link>
-            <Link href="#" color="inherit" sx={{ display: 'block', mb: 1 }}>
-              Términos y Condiciones
-            </Link>
+
+              <Link href="." color="inherit" sx={{ display: 'block', mb: 1 }}>
+                Buscar Países por nombre
+              </Link>
+              <Link href="#" color="inherit" sx={{ display: 'block', mb: 1 }}>
+                Buscar Países por Continentes
+              </Link>
+              <Link href="#" color="inherit" sx={{ display: 'block', mb: 1 }}>
+                Buscar Países por subregiones
+              </Link>
+              <Link href="" color="inherit" sx={{ display: 'block', mb: 1 }}>
+                Buscar Países por su idioma
+              </Link>
+
+              <a href="https://restcountries.com/" color="inherit" sx={{ display: 'block', mb: 1, FormatUnderlined:'' }}>
+                API Documentación
+              </a>
+
           </Grid>
 
           {/* Contact Section */}
