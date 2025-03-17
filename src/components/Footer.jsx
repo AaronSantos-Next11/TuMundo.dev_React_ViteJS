@@ -38,7 +38,7 @@ const Footer = () => {
             <Box sx={{ display: 'flex', gap: 2, mt: 2,
             }}>
               <Typography> Sigueme en GitHub </Typography>
-              <Link to="https://github.com/AaronSantos-Next11" color="inherit">
+              <Link to="https://github.com/AaronSantos-Next11" target="_blank" rel="noopener" color="inherit">
                 <GitHub style={{color:'white'}} /> 
               </Link>
 
