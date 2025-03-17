@@ -1,16 +1,14 @@
 import React from 'react';
 import Grid from '@mui/material/Grid2';
-import { Box, Typography, Container, Link, Divider } from '@mui/material';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { Box, Typography, Container, Divider } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { GitHub } from '@mui/icons-material';
+
+import { Link } from 'react-router-dom'; // Importa el componente Link de react-router-dom
 
 import vercelLogo from '../assets/icons/vercel.svg';
-
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -33,52 +31,55 @@ const Footer = () => {
               Sobre TuMundo.dev
             </Typography>
             <Typography variant="body2" >
-              La plataforma más completa de información sobre países del mundo. 
-              Explore datos demográficos, banderas, capitales y mucho más.
+              La plataforma más completa de información sobre países del mundo.
+              Explore datos demográficos, <br/> banderas, capitales y mucho más.
             </Typography>
-            <Box sx={{ display: 'flex', gap: 2, mt: 2 }}>
-              <Link href="#" color="inherit">
-                <FacebookIcon />
+
+            <Box sx={{ display: 'flex', gap: 2, mt: 2,
+            }}>
+              <Typography> Sigueme en GitHub </Typography>
+              <Link to="https://github.com/AaronSantos-Next11" color="inherit">
+                <GitHub style={{color:'white'}} /> 
               </Link>
-              <Link href="#" color="inherit">
-                <TwitterIcon />
-              </Link>
-              <Link href="#" color="inherit">
-                <InstagramIcon />
-              </Link>
-              <Link href="#" color="inherit">
-                <LinkedInIcon />
-              </Link>
+
             </Box>
           </Grid>
 
           {/* Links Section */}
-          <Grid  xs={12} sm={6} md={4}>
+          <Grid xs={12} sm={6} md={4} sx={{fontFamily: 'Raleway'}}>
             <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', fontFamily:'Railway' }}>
               Enlaces Útiles
             </Typography>
 
-              <Link href="." color="inherit" sx={{ display: 'block', mb: 1 }}>
-                Buscar Países por nombre
-              </Link>
-              <Link href="#" color="inherit" sx={{ display: 'block', mb: 1 }}>
-                Buscar Países por Continentes
-              </Link>
-              <Link href="#" color="inherit" sx={{ display: 'block', mb: 1 }}>
-                Buscar Países por subregiones
-              </Link>
-              <Link href="" color="inherit" sx={{ display: 'block', mb: 1 }}>
-                Buscar Países por su idioma
-              </Link>
+            <Link to="/buscar_por_nombre" color="white" 
+            style={{ display: 'block', marginBottom: '1rem', color: 'white', textDecorationLine: 'blink' }}>
+              Buscar Países por nombre
+            </Link>
 
-              <a href="https://restcountries.com/" color="inherit" sx={{ display: 'block', mb: 1, FormatUnderlined:'' }}>
-                API Documentación
-              </a>
+            <Link to="/buscar_por_region_subregion" color="inherit" 
+            style={{ display: 'block', marginBottom: '1rem', color: 'white', textDecorationLine: 'blink' }}>
+              Buscar Países por Continentes
+            </Link>
+
+            <Link to="/buscar_por_region_subregion/buscar_por_subregion" 
+            color="inherit" style={{ display: 'block', marginBottom: '1rem', color: 'white', textDecorationLine: 'blink'}}>
+              Buscar Países por subregiones
+            </Link>
+
+            <Link to="/buscar_por_lenguaje" color="inherit" 
+            style={{ display: 'block', marginBottom: '1rem', color: 'white',textDecorationLine: 'blink' }}>
+              Buscar Países por su idioma
+            </Link>
+
+            <a href="https://restcountries.com/" target='_blank' color="inherit" 
+            style={{ display: 'block', marginBottom: '1rem', color: 'white', textDecorationLine: 'blink' }}>
+              API Documentación
+            </a>
 
           </Grid>
 
           {/* Contact Section */}
-          <Grid xs={12} md={4}  >
+          <Grid xs={12} md={4}>
             <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
               Contacto
             </Typography>
@@ -110,9 +111,6 @@ const Footer = () => {
           <Typography variant="body2">
             © {currentYear} TuMundo.dev. Todos los derechos reservados.
           </Typography>
-          {/* <Typography variant="body2">
-            Alojado en Vercel <img style={{width:'15px', color: 'white', alignContent: 'center'}} src="../public/vercel.svg" alt="Vercel log" />
-          </Typography> */}
           <Typography variant="caption" display="block" sx={{ mt: 1, color: 'rgba(224, 225, 227, 0.7)' }}>
             Desarrollado con <span style={{ color: '#e91e63' }}>♥</span> por Next11 | Alojado en Vercel 
             <img style={{
