@@ -56,9 +56,9 @@ const Footer = () => {
               Buscar Países por nombre
             </Link>
 
-            <Link to="/buscar_por_region_subregion" color="inherit" 
+            <Link to="/buscar_por_region_subregion/buscar_por_region" color="inherit" 
             style={{ display: 'block', marginBottom: '1rem', color: 'white', textDecorationLine: 'blink' }}>
-              Buscar Países por Continentes
+              Buscar Países por región (continentes)
             </Link>
 
             <Link to="/buscar_por_region_subregion/buscar_por_subregion" 

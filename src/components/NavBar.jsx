@@ -21,7 +21,7 @@ const pages = [
   { name: 'Buscar por region', path: '/buscar_por_region_subregion' },
   { name: 'Buscar por idioma', path: '/buscar_por_lenguaje' }
 ];
-const settings = ['Sobre mi', 'Apoya al autor'];
+// const settings = ['Sobre mi', 'Apoya al autor'];
 
 function NavBar() {
   const navigate = useNavigate();
@@ -134,7 +134,7 @@ function NavBar() {
           {/* /* 
             ! Renderizado de la secciones para acerca del autor
           */}
-          <Box sx={{ flexGrow: 0 }}>
+          {/* <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Acerca del autor">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="N" src="/static/images/avatar/2.jpg" />
@@ -154,7 +154,7 @@ function NavBar() {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
+          </Box> */}
         
           {/* /* 
             ! FIN DEL CONTENIDO DEL NAVBAR 

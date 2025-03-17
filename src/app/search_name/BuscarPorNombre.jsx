@@ -94,7 +94,7 @@ export default function BuscarPorNombre() {
   return (
     <div style={{ background: 'linear-gradient(180deg, rgba(2,0,36,1) 14%, rgba(9,9,121,1) 50%, rgba(0,146,255,1) 100%)', }}>
 
-    <Container maxWidth="lg" sx={{ py: '15rem' }} >
+    <Container maxWidth="lg" sx={{ py: '19vh' }} >
       <Paper 
         elevation={3} 
         sx={{ 
