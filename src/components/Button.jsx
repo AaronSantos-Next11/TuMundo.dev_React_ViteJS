@@ -3,6 +3,7 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
 import './button.css';
+import { Link } from 'react-router-dom';
 
 const Button = () => {
   const theme = useTheme();
@@ -33,7 +34,7 @@ const Button = () => {
       }}
     >
       <div className="btn-conteiner" >
-        <a className="btn-content" href="/buscar_por_nombre">
+        <Link className="btn-content" to="/buscar_por_nombre">
           <span className="btn-title" style={{ fontSize: getFontSize() }}>
             Buscar más
           </span>
@@ -53,7 +54,7 @@ const Button = () => {
               </g>
             </svg>
           </span> 
-        </a>
+        </Link>
       </div>
     </Box>
   );
