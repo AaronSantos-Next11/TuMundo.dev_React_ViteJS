@@ -12,8 +12,8 @@
    align-items: center;
    padding: 5px 20px;
    text-decoration: none;
-   font-family: 'Railway', sans-serif;
-   font-weight: 300;
+   font-family: 'Raleway', sans-serif;
+   font-weight: 400;
    font-size: 20px;
    color: var(--color-text);
    background: linear-gradient(190deg, var(--color-background) 14%, var(--color-background-2) 85%);

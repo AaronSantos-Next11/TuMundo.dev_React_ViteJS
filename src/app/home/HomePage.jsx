@@ -8,7 +8,7 @@ import { Card, Paper, CircularProgress } from '@mui/material';
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import CardActionArea from '@mui/material/CardActionArea';
 
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 // import NavBar from '../../components/NavBar';
 import Button from '../../components/Button';
@@ -125,9 +125,10 @@ export default function HomePage() {
             La página con la mayor recopilación de datos de cada país del planeta.
           </Typography>
 
-          <Link to="/buscar_por_nombre" style={{textDecorationLine: 'blink'}} >          
             <Button /> {/* Boton que lleva a la sección de busqueda de paises */}
-          </Link>
+
+          {/* <Link to="/buscar_por_nombre" style={{textDecorationLine: 'blink'}} >          
+          </Link> */}
 
           <KeyboardDoubleArrowDownIcon 
           fontSize="large" 

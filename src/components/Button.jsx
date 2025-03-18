@@ -3,6 +3,7 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
 import './button.css';
+import { Link } from 'react-router-dom';
 
 const Button = () => {
   const theme = useTheme();
@@ -25,7 +26,8 @@ const Button = () => {
   };
 
   return (
-    <Box 
+    <Box
+      to="/buscar_por_nombre"
       sx={{ 
         display: 'flex', 
         justifyContent: 'center',
