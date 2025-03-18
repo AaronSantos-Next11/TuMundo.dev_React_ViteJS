@@ -10,9 +10,7 @@ import CardActionArea from '@mui/material/CardActionArea';
 
 // import { Link } from 'react-router-dom';
 
-// import NavBar from '../../components/NavBar';
 import Button from '../../components/Button';
-// import Footer from '../../components/Footer';
 import CountryDialog from '../../components/CountryDialog';
 
 export default function HomePage() {

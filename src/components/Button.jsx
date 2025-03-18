@@ -3,7 +3,6 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
 import './button.css';
-import { Link } from 'react-router-dom';
 
 const Button = () => {
   const theme = useTheme();
@@ -27,15 +26,14 @@ const Button = () => {
 
   return (
     <Box
-      to="/buscar_por_nombre"
       sx={{ 
         display: 'flex', 
         justifyContent: 'center',
         margin: { xs: '1rem', sm: '1.5rem', md: '2rem' }
       }}
     >
-      <div className="btn-conteiner">
-        <a className="btn-content" href="#">
+      <div className="btn-conteiner" >
+        <a className="btn-content" href="/buscar_por_nombre">
           <span className="btn-title" style={{ fontSize: getFontSize() }}>
             Buscar más
           </span>
