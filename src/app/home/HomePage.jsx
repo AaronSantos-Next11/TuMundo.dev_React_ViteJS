@@ -116,6 +116,10 @@ export default function HomePage() {
             Bienvenido a TuMundo.dev
           </Typography>
 
+          <Typography variant="h2" color="#e0e1e3" fontSize={fontsize_h2} align="center" margin={1}>
+            by Aaron Santos
+          </Typography>
+
           {/* Eslogan de la pagina */}
           <Typography variant="h6" color="#e0e1e3" fontSize={fontsize_eslogan} align="center" margin={3}>
             La página con la mayor recopilación de datos de cada país del planeta.
