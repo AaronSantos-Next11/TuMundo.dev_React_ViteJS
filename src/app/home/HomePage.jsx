@@ -117,7 +117,7 @@ export default function HomePage() {
           </Typography>
 
           <Typography variant="h2" color="#e0e1e3" fontSize={fontsize_h2} align="center" margin={1}>
-            by Aaron Santos
+            by Ing. de Software Aaron Santos 
           </Typography>
 
           {/* Eslogan de la pagina */}
